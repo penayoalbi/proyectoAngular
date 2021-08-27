@@ -1,0 +1,39 @@
+<p>primer-componente works!</p>
+
+<!--<label>{{nombre}}</label>-->
+<div class="row">
+    <label>Nombre</label>
+    <input type="text"  [value]="persona.nombre" (input)="setNombre('document')" id="nombre" >
+    <input type="button" (click) ="setNombre('nancy')"value="Click here!" ><br>
+</div>
+
+<div class="row">
+    <label>Apellido</label>
+    <input type="text" [value]="persona.apellido" (input)="setApellido('document')" id="apellido">
+    <input type="button" (click) ="setApellido('hola mundo')" value="Click here!"  id="button" ><br>
+
+</div>
+<div class="row">
+   <!--
+       <select (input)="mostrarTipoDocumento()" id="optTipo">
+        <option *ngFor="let item of tipoDocumento" value={{item.tipoDocumento}}>{{item.tipoDocumento}}</option>
+    </select>
+   --> 
+   <select (input)=mostrarTipoDocumento() id="optTipo">
+       <option *ngFor="let item of tipoDocumento" value={{item}}>{{item.tipoDocumento}}</option>
+   </select>
+</div>
+<!--<div class="row" *ngIf="persona.nombre=='azul'">-->
+<div class="row">
+    <Label>Documento</Label>
+    <input type="text" [value]="persona.documento" (input)="setDocumento('setdocu')" id="documento" [class]="persona.nombre">
+    <input type="button" (click)="cambiarClase()"  value="cambiar color">
+
+<div class="row">
+     <input type="button" (click)="claseSaludo('document')" value="Saludo" [class]="persona.nombre">
+</div>
+    <!--<label>{{color}}</label>
+    <input type="text" [value]="color" (button)="setColor('document')" id="color"> 
+    -->
+</div>
+<app-segundo-componente></app-segundo-componente>
