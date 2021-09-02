@@ -1,39 +1,76 @@
 <p>primer-componente works!</p>
 
-<!--<label>{{nombre}}</label>-->
+<!--<label>{{nombre}}</label>
 <div class="row">
     <label>Nombre</label>
     <input type="text"  [value]="persona.nombre" (input)="setNombre('document')" id="nombre" >
-    <input type="button" (click) ="setNombre('nancy')"value="Click here!" ><br>
+    <input type="button" (click) ="setNombre('nancy')"value="Click!" > <br>
 </div>
 
 <div class="row">
     <label>Apellido</label>
     <input type="text" [value]="persona.apellido" (input)="setApellido('document')" id="apellido">
-    <input type="button" (click) ="setApellido('hola mundo')" value="Click here!"  id="button" ><br>
+    <input type="button" (click) ="setApellido('hola mundo')" value="Click!"  id="button" ><br>
 
+</div>-->
+<div class="row" *ngFor="let itemCol of columnas">
+    <div  >
+        <table>
+            <tr *ngFor="let item of nombres"  class="row">        
+                <th>{{itemCol}}</th>
+                <td ><input type="text" [value]="item.nombre"></td>
+                <td ><input type="text" [value]="item.apellido"></td>
+                <td ><input type="text" [value]="item.tipoDocumento"></td>
+            </tr>
+
+        </table>
+    </div>
 </div>
-<div class="row">
-   <!--
-       <select (input)="mostrarTipoDocumento()" id="optTipo">
-        <option *ngFor="let item of tipoDocumento" value={{item.tipoDocumento}}>{{item.tipoDocumento}}</option>
-    </select>
-   --> 
-   <select (input)=mostrarTipoDocumento() id="optTipo">
-       <option *ngFor="let item of tipoDocumento" value={{item}}>{{item.tipoDocumento}}</option>
-   </select>
-</div>
+    <div *ngFor="let item of nombres"  class="row">
+        <input type="text" [value]="item.nombre">
+        <input type="text" [value]="item.apellido">
+        <input type="text" [value]="item.documento">
+        <input type="button" value="click"  id="btnCambiaColor">
+    </div>
+
 <!--<div class="row" *ngIf="persona.nombre=='azul'">-->
+    <!-- 
 <div class="row">
     <Label>Documento</Label>
     <input type="text" [value]="persona.documento" (input)="setDocumento('setdocu')" id="documento" [class]="persona.nombre">
     <input type="button" (click)="cambiarClase()"  value="cambiar color">
-
+</div>
 <div class="row">
      <input type="button" (click)="claseSaludo('document')" value="Saludo" [class]="persona.nombre">
 </div>
+-->
+<!-- 
+<form>
+    <div *ngIf="nombre!='falso'" class="row1">
+        {{nombre}}
+        <input type="text" [(ngModel)]="nombree" name="nombre">
+        <ng-template #bloqueElse class="row"> 
+            <input type="text" [(ngModel)]="nombre" name="txtNombre">
+        </ng-template>
+        <ng-template #bloqueElse class="row"> 
+            <input type="text" [(ngModel)]="nombre" name="txtNombre"> 
+        </ng-template>
+
+    </div>
+</form>
+-->
     <!--<label>{{color}}</label>
     <input type="text" [value]="color" (button)="setColor('document')" id="color"> 
-    -->
+    
 </div>
+-->
+<!--
+
+
+<form action="">
+   
+    <select >
+        <option *ngFor="let item of tipoDocumento">{{item.nombre}}</option>
+    </select>
+</form>-->
 <app-segundo-componente></app-segundo-componente>
