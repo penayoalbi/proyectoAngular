@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  esAdmin;
 
-  constructor() { }
+  constructor() { 
+    this.esAdmin = localStorage.getItem("usuario") == "admin";
+  }
 
   ngOnInit(): void {
   }
-
+  salir(){
+    localStorage.removeItem("usuario");
+  }
+ 
 }
