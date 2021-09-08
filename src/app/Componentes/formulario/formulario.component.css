@@ -1,0 +1,27 @@
+button{
+    font-size: 15px;
+    color: black;
+    width: 50px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+input{
+    margin-left: 5px;
+}
+.rojo{
+    background-color: red;
+}
+.blanco{
+    background-color: white;
+}
+.azul{
+    background-color: blue;
+}
+.amarillo{
+    background-color: yellow;
+}
+.fuente{
+    font-size: 35px;
+    color:chocolate;
+}
