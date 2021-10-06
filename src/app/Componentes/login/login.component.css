@@ -1,0 +1,26 @@
+
+.jumbotron {
+  background-color: #f4511e; /* Orange */
+  color: #ffffff;
+}
+.body{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  align-items: center;
+  background-color: #f0b9a9
+}
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+input{
+  padding: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+

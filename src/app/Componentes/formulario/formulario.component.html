@@ -4,13 +4,23 @@
     <table>
    <!--<table *ngFor="let itemCol of columnas" >-->
    <tr> 
-        <td>Nombre</td>  <td>Apellido</td> <td>tipoDocumento</td> <td>Documento</td>
+        <td>Nombre</td>   
+        <td>Apellido</td>
+        <td>tipoDocumento</td>
+        <td>Documento</td>
    </tr> 
     <tr *ngFor="let item of nombres" >
-        <td  ><input type="text" [value]="item.nombre"></td>
+       <!--
+        <td >
+           <label *ngIf="modificar!=item.id">{{item.nombre}}</label>
+            <input  *ngIf="modificar==item.id" type="text" name="nombre{{item.id}}"[(ngModel)]="item.nombre">
+        </td>-->
+        <td ><input type="text" [value]="item.id"></td>
+        <td ><input type="text" [value]="item.nombre"></td>
         <td ><input type="text" [value]="item.apellido"></td>
-        <td ><input type="text" [value]="item.tipoDocumento"></td>             
-        <input type="button" value="Modificar"  id="btnModificar">
+        <td ><input type="text" [value]="item.tipoDocumento"></td>
+        <td ><input type="text" [value]="item.documento"></td>             
+        <input type="button" (click)="modificar(item.id)" value="Modificar"  id="btnModificar">
     </tr>
 </table>
     
@@ -22,5 +32,6 @@
 <div *ngFor="let item of nombres"  class="row">
     <input type="text" [value]="item.nombre">
     <input type="text" [value]="item.apellido">
+    <input type="text" [value]="item.tipoDocumento"> 
     <input type="text" [value]="item.documento">    
 </div>
