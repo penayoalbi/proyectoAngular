@@ -1,0 +1,25 @@
+
+.body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e2e1
+  }
+  .registrarse-form {
+    min-width: 350px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .registrarse-form button {
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .full-width {
+    width: 100%;
+  }

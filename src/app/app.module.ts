@@ -17,7 +17,12 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatInputModule} from '@angular/material/input';
-
+import { RegistrarseComponent } from './Componentes/registrarse/registrarse.component';
+import { RecuperarPasswordComponent } from './Componentes/recuperar-password/recuperar-password.component';
+import { MatIconModule} from '@angular/material/icon';
+import  {ToastrModule  }  from  'ngx-toastr' ;
+import { ApiService} from './helpers/api.service';
+import { ProductoComponent } from './Componentes/producto/producto.component';
 //import { MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
@@ -26,7 +31,10 @@ import { MatInputModule} from '@angular/material/input';
     MenuComponent,
     NoEncontradoComponent,
     FormularioComponent,
-    FondoDirective
+    FondoDirective,
+    RegistrarseComponent,
+    RecuperarPasswordComponent,
+    ProductoComponent
     
   ],
   imports: [
@@ -35,15 +43,18 @@ import { MatInputModule} from '@angular/material/input';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatSliderModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatIconModule
     //MatSelectModule
   ],
   providers: [HttpClient],
+  
   bootstrap: [AppComponent]
 
 })

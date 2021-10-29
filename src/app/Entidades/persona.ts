@@ -1,8 +1,9 @@
 export class Persona {
-    //nombres: Array<string>|undefined;
-    id:number|undefined;
-    nombre:string |undefined;
-    apellido: string |undefined;
-    tipoDocumento: string|undefined;
-    documento: string |undefined;
+    id!:number;
+    nombre!:string ;
+    apellido!: string ;
+    tipoDocumento!: String;
+    documento!: number;
+    usuario!: String;
+    clave!: String;
 }

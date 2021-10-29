@@ -1,20 +1,24 @@
 <p>login works!</p>
-<div class="body">
-    <form class="login-form">
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Nombre de usuario</mat-label>
-            <input type="text" matInput placeholder="Usuario" >
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>password</mat-label>
-            <input type="password" matInput placeholder="password" >
-        </mat-form-field>  
-        <mat-form-field class="full-width" appearance="fill">
-            <input type="button" matInput value="Ingresar" class="btn btn-primary">
-        </mat-form-field>
-      </form>
-      
+<div class="container fluid">
+    <div class="body">
+        <form class="login-form">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Nombre de usuario</mat-label>
+                <input type="text" name="nombre" matInput placeholder="Usuario" [(ngModel)]="usuario.nombre">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="password" name="clave" matInput placeholder="Password" [(ngModel)]="usuario.clave" >
+            </mat-form-field>
+            <p>¿Olviste la contraseña?<a href="recuperar"> Click aquí</a></p>
+            <mat-button-toggle>
+                <button type="button" (click)="loginUser()" class="btn btn-primary">Ingresar</button> 
+            </mat-button-toggle>
+            <p>¿Todavía no estas registrado? <a href="registrarse"> Registrate!</a> </p> 
+        </form>
+    </div>
 </div>
+
 
 <!-- 
 <footer> 

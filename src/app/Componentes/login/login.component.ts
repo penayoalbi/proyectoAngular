@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
-
+import {ApiService} from '../../helpers/api.service';
+import {Persona} from 'src/app/Entidades/persona'
+import { UserServiceService } from 'src/app/helpers/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,24 +10,33 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:string;
+  usuario!: Persona;
 
-  constructor(){
-    this.usuario='';
+  constructor(private apiService: ApiService,
+     private userService: UserServiceService, 
+     private ruteo: Router){
+    this.usuario = new Persona;
   }
-
-  //constructor(private ruteo: Router) {
-   // this.usuario='';
-   // if(localStorage.getItem("usuario") == "admin"){
-    //  this.ruteo.navigate(["/formulario"]);
-   // }
-  // }
 
    ngOnInit(): void {
   }
-   entrar(){
-     localStorage.setItem("usuario",this.usuario);
-     console.log(this.usuario);
+
+  ingresar(rs: Persona[]){
+    if(rs.length==0){
+      alert("Error, usuario no valido");
+    }else{
+      this.userService.setPersona(rs[0]);
+      this.ruteo.navigateByUrl('menu');
+    }
+
   }
+
+   loginUser(){
+    this.apiService.Login(this.usuario).subscribe(
+      datos => {
+        this.ingresar(datos);}, err => alert(err.message)
+      );
+     //localStorage.setItem("usuario",this.usuario);
+      }
 
 }
